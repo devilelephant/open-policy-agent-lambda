@@ -1,8 +1,7 @@
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+This is one implementation of the AWS Blog: 
+https://aws.amazon.com/blogs/opensource/creating-a-custom-lambda-authorizer-using-open-policy-agent/
 
+This is in no way production level code, just a scratchpad.
 
 // AFTER cdk deploy copy
 HELLOAPI=https://7063zredxj.execute-api.us-east-1.amazonaws.com/prod/hello // whatever the url is
