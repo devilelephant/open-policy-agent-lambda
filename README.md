@@ -3,12 +3,21 @@ https://aws.amazon.com/blogs/opensource/creating-a-custom-lambda-authorizer-usin
 
 This is in no way production level code, just a scratchpad.
 
+```
+make deps
+make clean
+make opabuild
+
+// optional
+cdk synth 
+cdk deploy
+
 // AFTER cdk deploy copy
 HELLOAPI=https://7063zredxj.execute-api.us-east-1.amazonaws.com/prod/hello // whatever the url is
 curl --location --request GET $HELLOAPI --header 'usergroup: ViewerGroup' --header 'resource: record1'
 curl --location --request GET $HELLOAPI --header 'usergroup: ViewerGroup' --header 'resource: record_secret'
 curl --location --request GET $HELLOAPI --header 'usergroup: AdminGroup' --header 'resource: record_secret'
-
+```
 
 curl --location --request GET $HELLOAPI --header 'usergroup: ViewerGroup' --header 'resource: record1'
 > {"message": "Hello, You are authorized using Open Policy Agent Lambda Authorizer"}
